@@ -25,7 +25,7 @@ fn main() {
 
     let analysis=|needle:f32,carbon:f32,rad:f32,unitlen:f32,unitexh:f32|{
         let r0=(needle.powi(2)+carbon.powi(2)-2.0*needle*carbon*(rad.cos())).sqrt();
-        (unitlen/unitexh)*(needle*(1.0+rad.cos())/(l*(rad.cos())-carbon+r0)).ln()
+        (unitlen/unitexh)*(needle*(1.0+rad.cos())/(needle*(rad.cos())-carbon+r0)).ln()
     };
     println!("analysis:{}",analysis(l,m0,theta,n,o));
     println!("simulation:{}",compass(l,m0,theta,n,o,0.0));
