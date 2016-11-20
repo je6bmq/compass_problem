@@ -1,21 +1,20 @@
 import java.lang.Math;
 object MainKt {
-    tailrec fun compass(l:Double,m:Double,theta:Double,n:Double,o:Double,phi:Double=0.0):Double
+    tailrec fun compass(l:Double,m:Double,theta:Double,n:Double,o:Double,phi:Double=0.0):Double= 
+    if(m<=0)
     {
-        return if(m<=0)
-        {
             phi
-        }
-        else
-        {
+    }
+    else
+    {
             val delta_phi=2.0*Math.PI/10000000
             val ratio=o/n
             val radius=Math.sqrt(Math.pow(l,2.0)+Math.pow(m,2.0)-2.0*l*m*Math.cos(theta))
             val exhaust=radius*delta_phi*ratio
 
             compass(l,m-exhaust,theta,n,o,phi+delta_phi)
-        }
     }
+    
   @JvmStatic fun main(args:Array<String>) {
       val n=0.001
       val o=0.001
