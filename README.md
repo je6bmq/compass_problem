@@ -37,3 +37,5 @@ Kotlin版は、
 kotlinc Main.kt -include-runtime -d Main.jar
 kotlin -classpath Main.jar MainKt
 ```
+
+で実行可能です。
